@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== 'production' &&
   warning = (type, errors) => {
     if (typeof console !== 'undefined' && console.warn) {
       if (errors.every(e => typeof e === 'string')) {
-        console.warn(type, errors);
+        // console.warn(type, errors);
       }
     }
   };

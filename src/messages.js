@@ -1,7 +1,6 @@
 export function newMessages() {
   return {
     default: 'Validation error on field %s',
-    required: '%s is required',
     enum: '%s must be one of %s',
     whitespace: '%s cannot be empty',
     date: {
