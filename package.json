@@ -1,17 +1,17 @@
 {
-  "name": "async-validator",
-  "version": "1.8.2",
+  "name": "vusion-async-validator",
+  "version": "1.8.3",
   "description": "validate form asynchronous",
   "keywords": [
     "validator",
     "validate",
     "async"
   ],
-  "homepage": "http://github.com/yiminghe/async-validator",
-  "author": "yiminghe@gmail.com",
+  "homepage": "http://github.com/vusion/async-validator",
+  "author": "haoxutong <1255965516@11.com>",
   "repository": {
     "type": "git",
-    "url": "git@github.com:yiminghe/async-validator.git"
+    "url": "git@github.com:vusion/async-validator.git"
   },
   "files": [
     "lib",
@@ -28,7 +28,7 @@
     }
   },
   "bugs": {
-    "url": "http://github.com/yiminghe/async-validator/issues"
+    "url": "http://github.com/vusion/async-validator/issues"
   },
   "licenses": "MIT",
   "config": {
