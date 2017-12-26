@@ -13,14 +13,17 @@
     "type": "git",
     "url": "git@github.com:vusion/async-validator.git"
   },
+  "main": "./dist/bundle.js",
   "licenses": "MIT",
   "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-plugin-istanbul": "^4.1.4",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-2": "^6.24.1",
     "coveralls": "^2.13.1",
     "jest": "20.x",
     "pre-commit": "1.x",
-    "babel-plugin-istanbul": "^4.1.4",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-stage-2": "^6.24.1"
+    "webpack": "^3.10.0"
   },
   "dependencies": {
     "babel-runtime": "6.x"
