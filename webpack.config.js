@@ -3,7 +3,14 @@ module.exports = {
     entry: './index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),        //__dirname是一个nodejs变量，表示当前js文件所在的目录
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        library: {
+            root: 'AsyncValidator',
+            amd: 'async-validator',
+            commonjs: 'async-validator',
+            commonjs2: 'async-validator'
+        },
+        libraryTartget: 'umd'
     },
     module: {
         rules: [
