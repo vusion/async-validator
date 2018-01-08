@@ -8,9 +8,8 @@ module.exports = {
             root: 'AsyncValidator',
             amd: 'async-validator',
             commonjs: 'async-validator',
-            commonjs2: 'async-validator'
         },
-        libraryTartget: 'umd'
+        libraryTarget: 'umd'
     },
     module: {
         rules: [

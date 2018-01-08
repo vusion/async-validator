@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["async-validator"] = factory();
+	else
+		root["AsyncValidator"] = factory();
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -68,7 +78,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return warning; });
+/* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export warning */
 /* harmony export (immutable) */ __webpack_exports__["d"] = format;
 /* harmony export (immutable) */ __webpack_exports__["e"] = isEmptyValue;
 /* unused harmony export isEmptyObject */
@@ -90,7 +100,7 @@ if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && ty
       if (errors.every(function (e) {
         return typeof e === 'string';
       })) {
-        // console.warn(type, errors);
+        console.warn(type, errors);
       }
     }
   };
@@ -239,12 +249,12 @@ function asyncMap(objArr, option, func, callback) {
 
 function complementError(rule) {
   return function (oe) {
-    if (oe && oe.message) {
+    if (oe && (typeof oe === 'undefined' ? 'undefined' : _typeof(oe)) === 'object') {
       oe.field = oe.field || rule.fullField;
       return oe;
     }
     return {
-      message: oe,
+      message: typeof oe === 'string' ? oe : undefined,
       field: oe.field || rule.fullField
     };
   };
@@ -497,7 +507,9 @@ Schema.prototype = {
           errors = [errors];
         }
         if (errors.length) {
-          Object(__WEBPACK_IMPORTED_MODULE_0__util__["f" /* warning */])('async-validator:', errors);
+          errors = errors.map(function (error) {
+            return true;
+          });
         }
         if (errors.length && rule.message) {
           errors = [].concat(rule.message);
@@ -1604,6 +1616,7 @@ function type(rule, value, callback, source, options) {
 function newMessages() {
   return {
     default: 'Validation error on field %s',
+    required: '%s is required',
     enum: '%s must be one of %s',
     whitespace: '%s cannot be empty',
     date: {
@@ -1659,3 +1672,4 @@ var messages = newMessages();
 
 /***/ })
 /******/ ]);
+});
