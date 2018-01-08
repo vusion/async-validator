@@ -14,7 +14,7 @@ import * as util from '../util';
 function required(rule, value, source, errors, options, type) {
   if (rule.required &&
     (!source.hasOwnProperty(rule.field) || util.isEmptyValue(value, type || rule.type))) {
-    errors.push(util.format(options.messages.required));
+    errors.push(util.format(options.messages.required, rule.fullField));
   }
 }
 

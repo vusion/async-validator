@@ -151,7 +151,7 @@ Schema.prototype = {
           errors = [errors];
         }
         if (errors.length) {
-          warning('async-validator:', errors);
+          errors = errors.map((error) => true);
         }
         if (errors.length && rule.message) {
           errors = [].concat(rule.message);

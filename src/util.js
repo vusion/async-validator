@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== 'production' &&
   warning = (type, errors) => {
     if (typeof console !== 'undefined' && console.warn) {
       if (errors.every(e => typeof e === 'string')) {
-        // console.warn(type, errors);
+        console.warn(type, errors);
       }
     }
   };
@@ -159,13 +159,13 @@ export function asyncMap(objArr, option, func, callback) {
 
 export function complementError(rule) {
   return (oe) => {
-    if (oe && oe.message) {
+    if (oe && typeof oe === 'object') {
       oe.field = oe.field || rule.fullField;
       return oe;
     }
     return {
-      message: oe,
-      field: oe.field || rule.fullField,
+      message: typeof oe === 'string' ? oe : undefined,
+      field: oe.field || rule.fullField
     };
   };
 }
